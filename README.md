@@ -18,6 +18,25 @@ Each lab folder typically contains:
 
 Getting started
 
+Running in Wokwi (quick simulator)
+
+Wokwi (https://wokwi.com) is a browser-based Arduino simulator that's great for testing sketches without hardware. Many of the labs in this repo can be run in Wokwi with minimal changes.
+
+Basic steps:
+
+1. Open https://wokwi.com and choose "Arduino UNO" (or the board used by a lab).
+2. Copy the sketch code from a lab's `Sketch.ino` into Wokwi's editor (or drag the sketch file into the Wokwi editor area).
+3. If a lab uses external libraries (listed in `Libraries.txt`), add them in Wokwi by clicking the "Libraries" button and searching for the library (Wokwi supports many common libraries such as Adafruit GFX). If a library is missing, you can sometimes paste the library source files into the Wokwi project.
+4. Recreate the wiring in the Wokwi schematic editor. If a `Diagram.json` is present, Wokwi can import some diagram formats — otherwise rewire components manually using the editor.
+5. Click "Start Simulation" to run the sketch. Use Wokwi's serial monitor and virtual components (LEDs, sensors) to interact and verify behavior.
+
+Tips for Wokwi
+
+- If a sketch refers to hardware not available in Wokwi, consider stubbing sensor reads or using mock values for testing.
+- For I2C displays (like I2C LCDs or OLEDs), Wokwi provides virtual modules; wire SDA/SCL accordingly and set the correct I2C address in the sketch.
+- When a library isn't available in Wokwi's library list, try copying the minimal required source files into the project or test with simplified code that doesn't require the library.
+
+Using a real Arduino:
 1. Install the Arduino IDE (or PlatformIO for VS Code).
 2. Open the lab folder you want to try (for example `Lab 1 - Blinking LED`) in the Arduino IDE.
 3. Install any libraries listed in that lab's `Libraries.txt`. For the Arduino IDE you can install them via Sketch → Include Library → Manage Libraries... or by adding them to your sketchbook `libraries` folder.
@@ -28,12 +47,6 @@ Notes and recommendations
 - Use the `Libraries.txt` file in each lab folder as the source of required libraries. Common libraries used across the repo include Adafruit GFX and LiquidCrystal I2C.
 - If you use PlatformIO, create a `platformio.ini` in the lab folder or at the workspace root and add the library dependencies there.
 - Consider adding a top-level `.gitattributes` to normalize line endings if contributors use different OSes.
-
-Contributing
-
-If you want to improve lab content, add sketches, or fix wiring diagrams, please open a pull request. When adding new libraries, prefer adding them to the lab's `Libraries.txt` and include install instructions if they're not available through the Arduino Library Manager.
-
-License
 
 Most lab folders include a `LICENSE` file (MIT by default). Check the specific lab folder for licensing details.
 
