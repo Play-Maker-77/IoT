@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Taha Ghabri",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -214.2, "left": -131.6, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -210.9, "left": 100.2, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -82.45,
+      "left": 144,
+      "attrs": { "value": "10000" }
+    }
+  ],
+  "connections": [
+    [ "bb1:24b.g", "uno:5V", "red", [ "v0" ] ],
+    [ "uno:GND.2", "bb1:33b.j", "black", [ "v0" ] ],
+    [ "uno:A2", "bb1:25b.h", "green", [ "v19.1", "h-101.6" ] ],
+    [ "dht1:VCC", "bb1:24b.f", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:25b.f", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:26b.f", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:27b.f", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:27b.h", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:33b.h", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}

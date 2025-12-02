@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -118.2, "left": -141.2, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 192.6, "left": -10.2, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -44,
+      "left": 58.7,
+      "attrs": { "common": "anode" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 117.6,
+      "left": 376.2,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 403.96, "left": 816, "attrs": {} }
+  ],
+  "connections": [
+    [ "bb1:20b.j", "uno:9", "red", [ "v76.8", "h85.6" ] ],
+    [ "bb1:22b.j", "uno:10", "green", [ "v86.4", "h56.9" ] ],
+    [ "bb1:23b.j", "uno:11", "blue", [ "v96", "h37.8" ] ],
+    [ "bz1:1", "uno:8", "black", [ "v0" ] ],
+    [ "bz1:2", "uno:GND.2", "red", [ "v201.6", "h-253.9" ] ],
+    [ "bb1:21b.j", "uno:3.3V", "green", [ "v0" ] ],
+    [ "rgb1:R", "bb1:20b.f", "", [ "$bb" ] ],
+    [ "rgb1:COM", "bb1:21b.g", "", [ "$bb" ] ],
+    [ "rgb1:G", "bb1:22b.f", "", [ "$bb" ] ],
+    [ "rgb1:B", "bb1:23b.f", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
