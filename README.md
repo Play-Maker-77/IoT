@@ -9,6 +9,9 @@ Repository structure (top-level folders):
 - `Lab 3 - RGB_LED & Buzzer/` — RGB LED control and buzzer examples.
 - `Lab 4 - LCD & OLED display/` — character LCD and OLED display sketches (subfolders for LCD and OLED).
 - `Lab 5 - Potentiometer & Button/` — potentiometer and push-button interaction examples.
+- `Lab 6 - PIR & Ultrasonic sensors/` — motion detection with PIR sensors and distance sensing with ultrasonic sensors; includes wiring diagrams and example sketches for detecting motion and measuring distance.
+- `Lab 7 - Automation/` — simple automation projects that combine sensors and actuators; includes temperature-based automation examples using DHT22 and LM35 (e.g., control outputs based on sensor readings).
+- `Lab 8 - ESP32 Wifi & API/` — ESP32 Wi‑Fi examples and networked projects, including sending sensor data to APIs; contains `secrets.h` and notes about required libraries and configuration.
 
 Each lab folder typically contains:
 
