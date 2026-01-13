@@ -1,0 +1,45 @@
+/* Comment this out to disable prints and save space */
+#define BLYNK_PRINT Serial
+
+/* Fill in information from Blynk Device Info here */
+#define BLYNK_TEMPLATE_ID "TMPL6sJ2rIDUx"
+#define BLYNK_TEMPLATE_NAME "Wokwi Connection"
+#define BLYNK_AUTH_TOKEN "IdLLHG-PtYyKIFv5rLR1eqyX7se4UtfO"
+
+
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
+
+// Your WiFi credentials.
+// Set password to "" for open networks.
+char ssid[] = "Wokwi-GUEST";
+char pass[] = "";
+
+#define relayPin1 19
+#define relayPin2 18
+
+void setup()
+{
+  // Debug console
+  Serial.begin(9600);
+
+  pinMode(relayPin1, OUTPUT);
+  pinMode(relayPin2, OUTPUT);
+  pinMode(relayPin3, OUTPUT);
+  pinMode(relayPin4, OUTPUT);
+
+  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+}
+
+void loop()
+{
+  Blynk.run();
+}
+
+BLYNK_WRITE(V0) {
+  digitalWrite(relayPin1, param.asInt());
+}
+BLYNK_WRITE(V1) {
+  digitalWrite(relayPin2, param.asInt());
+}
